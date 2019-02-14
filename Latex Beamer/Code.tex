@@ -1,0 +1,346 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Short title]{Matrix Project } % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{EE17BTECH11018 \newline EE17BTECH11019} % Your name
+\institute[IIT Hyderabad] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+IIT Hyderabad \\ % Your institution for the title page
+\medskip
+\textit{EE 1390-INTRO to AI and ML} 
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Geometry Question}
+Let P be a point on $ y^2=8x $ which is at minimum distance from the centre C of the circle $x^2+y^2+12y=1$ .Find the equation of circle passing through C and has centre P  .\\~\\
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Matrix Equivalent of Question}
+Circle equation is  $x^2+y^2+12y=1$ i.e A=1 ,B=0, C=1, D=0,E=12,F=-1
+Comparing it with original conic equation $$x^TVx+2u^Tx+F=0$$
+we get V=$ \left[ 
+  \begin{array}{ c c }
+     1& 0\\
+     0 & 1
+  \end{array} \right]
+$ and u=$ \left[
+  \begin{array}{ c }
+     0 \\
+     6
+  \end{array} \right]
+$ .Therefore  the equation of circle is as follows:
+x^T$ \left[
+  \begin{array}{ c c }
+     1 & 0 \\
+     0& 1
+  \end{array} \right]
+$x+$ \left[
+  \begin{array}{ c c }
+     0 & 12 \\
+     
+  \end{array} \right]
+$x=1
+
+Simlarly parabola equation is $x^T$ \left[
+  \begin{array}{ c c }
+     0 & 0\\
+     0 & 1
+  \end{array} \right]
+x+$ \left[
+  \begin{array}{ c c }
+     -8&0 \\
+    
+  \end{array} \right]
+$x=0
+where x and V are Matrices .V is 2*2 and x is 2*1.
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solution in MATRIX form}
+\begin{block}{Idea}
+We are given that circle's centre C is at a minimum distance from point P on the parabola i.e Circle is also at a minimum distance from the point on the parabola.
+\newline
+Therefore the normal drawn at the point P on the parabola should also be a normal to the circle (Since the tangents are parallel) i.e the normal at P passes through C .
+\end{block}
+We know tangent for the conic  $x^TVx+2u^Tx+F=0$ is $$(p^TV+u^T)x+p^Tu+F=0$$
+Here p is \left[
+  \begin{array}{ c c }
+     2t^2\\
+     4t
+  \end{array} \right],
+V=\left[ 
+  \begin{array}{ c c }
+     0& 0\\
+     0 & 1
+  \end{array} \right],
+  u=$ \left[ 
+  \begin{array}{ c  }
+     -4\\
+     0
+  \end{array} \right] $
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Solution in MATRIX form}
+Therefore equation of tangent at P is $$((\left[ 
+  \begin{array}{ c c }
+     2t^2&4t\\
+     
+  \end{array} \right ].\left[ 
+  \begin{array}{ c c }
+     0& 0\\
+     0 & 1
+  \end{array} \right])+\left[ 
+  \begin{array}{ c c }
+     -4&0\\
+     
+  \end{array} \right]))x+\left[ 
+  \begin{array}{ c c }
+     2t^2&4t\\
+     
+  \end{array} \right].\left[ 
+  \begin{array}{ c  }
+     -4\\
+     0 
+  \end{array} \right]=0
+ \\  Simplifying , we get 
+  \left[ 
+  \begin{array}{ c c }
+     -4 &4t\\
+     
+  \end{array} \right]x=8t^2
+\\  Given tangent \left[ 
+  \begin{array}{ c c }
+     a& b\\
+     
+  \end{array} \right]x=c,\\we can write normal equation \left[ 
+  \begin{array}{ c c }
+     b&-a\\
+     
+  \end{array} \right]x=$c^{\prime}$, Therefore the equation of normal passing through p is as follows
+  \begin{equation*}
+  \left[
+  \begin{array}{c c}
+  t&1\\
+  \end{array}
+  \right]x=c^{\prime}
+  \end{equation*}
+
+\end{frame}
+
+%------------------------------------------------
+\section{Second Section}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solution in MATRIX form}
+Now substitute x=c which is centre of circle  c=\left[ 
+  \begin{array}{ c  }
+     0\\
+    -6
+     
+  \end{array} \right]
+  \\  \left[ 
+  \begin{array}{ c c }
+     t&1\\
+     
+  \end{array} \right]\cdot \left[ 
+  \begin{array}{ c }
+     0\\
+    -6
+     
+  \end{array} \right]=c^{\prime}
+  \text{ that is  }  c^{\prime}=-6.
+  \\
+ \\ Therefore the equation of normal is \\\left[ 
+  \begin{array}{ c c }
+     t&1\\
+     
+
+  \end{array} \right]x=-6.
+  \\Now substituting point P in the normal equation we get 
+  \\ \left[ 
+  \begin{array}{ c c }
+     t&1\\
+     
+  \end{array} \right]\cdot \left[ 
+  \begin{array}{ c }
+$2t^2$\\
+     4t
+     
+  \end{array} \right]=-6
+  \\ \text{ i.e } $2t^2$+4t=-6
+ \\  Therefore t=-1 is the only real root for the above equation 
+  \\ Therefore the point P is p=\left[ 
+  \begin{array}{ c  }
+     2\\
+    -4
+  \end{array} \right]
+ 
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Solution in MATRIX form}
+Now taking P as centre and C as point on the circle ,we calculate radius of the required circle $|p-c|^{2}=(2-0)^2+(-4+6)^2$\\
+r^2 = 2^2 + 2^2 = 8\\
+Now, taking this radius and P as a centre, equation of the circle is,
+\begin{center}
+\[
+|x-p|^{2} = r^{2}\\
+\left( x-p \right)\cdot (x-p)^{T} = r^{2}
+= 8\\[10pt]
+xx^{T} - xp^{T} - px^{T} + pp^{T} = 8
+\]
+\end{center}
+\end{frame}
+
+\begin{frame}{Solution in MATRIX Form}
+$$
+xx^{T} - x \left[\begin{array}{ c }
+     2 -4\\
+  \end{array} \right]
+  -  \left[
+  \begin{array}{ c }
+     2\\
+    -4
+  \end{array} \right]x^{T} + 2^2 + (-4)^{2} = 8\\
+\qquad \qquad xx^{T} - x \left[\begin{array}{ c }
+     2 -4\\
+  \end{array} \right]
+  -  \left[
+  \begin{array}{ c }
+     2\\
+    -4
+  \end{array} \right]x^{T} + 12 = 0
+$$
+ \\This is the equation of the circle required.
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Figure}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{Figure_1[13474].png}
+\end{figure}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\Huge{\centerline{The End}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
