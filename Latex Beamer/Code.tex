@@ -85,7 +85,7 @@
 
 \title[Short title]{Matrix Project } % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{EE17BTECH11018 \newline EE17BTECH11019} % Your name
+\author{EE17BTECH11018 \& EE17BTECH11019} % Your name
 \institute[IIT Hyderabad] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 IIT Hyderabad \\ % Your institution for the title page
@@ -115,41 +115,42 @@ Let P be a point on $ y^2=8x $ which is at minimum distance from the centre C of
 \begin{frame}
 \frametitle{Matrix Equivalent of Question}
 Circle equation is  $x^2+y^2+12y=1$ i.e A=1 ,B=0, C=1, D=0,E=12,F=-1
-Comparing it with original conic equation $$x^TVx+2u^Tx+F=0$$
+Comparing it with original conic equation $$(x^T)Vx+2(u^T)x+F=0$$
 we get V=$ \left[ 
   \begin{array}{ c c }
      1& 0\\
      0 & 1
-  \end{array} \right]
-$ and u=$ \left[
+  \end{array} \right]$ and u=$ \left[
   \begin{array}{ c }
      0 \\
      6
-  \end{array} \right]
-$ .Therefore  the equation of circle is as follows:
-x^T$ \left[
+  \end{array} \right]$
+ .Therefore  the equation of circle is as follows:
+\[
+x^T \left[
   \begin{array}{ c c }
      1 & 0 \\
      0& 1
   \end{array} \right]
-$x+$ \left[
+x+ \left[
   \begin{array}{ c c }
      0 & 12 \\
      
   \end{array} \right]
-$x=1
-
-Simlarly parabola equation is $x^T$ \left[
+x=1
+\]
+Similarly parabola equation is 
+\[ x^T \left[
   \begin{array}{ c c }
      0 & 0\\
      0 & 1
   \end{array} \right]
-x+$ \left[
+x+ \left[
   \begin{array}{ c c }
      -8&0 \\
     
   \end{array} \right]
-$x=0
+\]
 where x and V are Matrices .V is 2*2 and x is 2*1.
 
 \end{frame}
@@ -163,8 +164,8 @@ We are given that circle's centre C is at a minimum distance from point P on the
 \newline
 Therefore the normal drawn at the point P on the parabola should also be a normal to the circle (Since the tangents are parallel) i.e the normal at P passes through C .
 \end{block}
-We know tangent for the conic  $x^TVx+2u^Tx+F=0$ is $$(p^TV+u^T)x+p^Tu+F=0$$
-Here p is \left[
+We know tangent for the conic  $x^{T}Vx+2u^{T}x+F=0$ is $$(p^TV+u^T)x+p^Tu+F=0$$
+Here p is $\left[
   \begin{array}{ c c }
      2t^2\\
      4t
@@ -174,11 +175,11 @@ V=\left[
      0& 0\\
      0 & 1
   \end{array} \right],
-  u=$ \left[ 
+  u= \left[ 
   \begin{array}{ c  }
      -4\\
      0
-  \end{array} \right] $
+  \end{array} \right]$
 
 
 
@@ -187,42 +188,48 @@ V=\left[
 
 \begin{frame}
 \frametitle{Solution in MATRIX form}
-Therefore equation of tangent at P is $$((\left[ 
+Therefore equation of tangent at P is 
+\[
+\left[ 
   \begin{array}{ c c }
-     2t^2&4t\\
+     2t^{2}&4t
      
   \end{array} \right ].\left[ 
   \begin{array}{ c c }
-     0& 0\\
+     0 & 0\\
      0 & 1
-  \end{array} \right])+\left[ 
+  \end{array} \right]+\left[ 
   \begin{array}{ c c }
-     -4&0\\
-     
+     -4&0
   \end{array} \right]))x+\left[ 
   \begin{array}{ c c }
-     2t^2&4t\\
+     2t^2&4t
      
   \end{array} \right].\left[ 
-  \begin{array}{ c  }
+  \begin{array}{ c }
      -4\\
      0 
   \end{array} \right]=0
- \\  Simplifying , we get 
+  \]
+ \\  Simplifying , we get
+ \[
   \left[ 
   \begin{array}{ c c }
-     -4 &4t\\
-     
+     -4 &4t
   \end{array} \right]x=8t^2
-\\  Given tangent \left[ 
+  \]
+Given tangent 
+\[
+\left[ 
   \begin{array}{ c c }
-     a& b\\
-     
-  \end{array} \right]x=c,\\we can write normal equation \left[ 
+     a& b
+  \end{array} \right]x=c
+  \]
+  ,\\we can write normal equation $\left[ 
   \begin{array}{ c c }
-     b&-a\\
-     
-  \end{array} \right]x=$c^{\prime}$, Therefore the equation of normal passing through p is as follows
+     b & -a
+  \end{array} \right]x=c^{\prime}$
+  ,Therefore the equation of normal passing through p is as follows
   \begin{equation*}
   \left[
   \begin{array}{c c}
@@ -233,55 +240,53 @@ Therefore equation of tangent at P is $$((\left[
 
 \end{frame}
 
-%------------------------------------------------
-\section{Second Section}
+%---
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{Solution in MATRIX form}
-Now substitute x=c which is centre of circle  c=\left[ 
+Now substitute $x=c$ which is centre of circle  $c=\left[ 
   \begin{array}{ c  }
      0\\
     -6
-     
-  \end{array} \right]
-  \\  \left[ 
+  \end{array} \right]$
+  \[
+  \left[ 
   \begin{array}{ c c }
-     t&1\\
-     
+     t&1
   \end{array} \right]\cdot \left[ 
   \begin{array}{ c }
      0\\
     -6
-     
   \end{array} \right]=c^{\prime}
   \text{ that is  }  c^{\prime}=-6.
-  \\
- \\ Therefore the equation of normal is \\\left[ 
+  \]
+  Therefore the equation of normal is
+  \[\left[ 
   \begin{array}{ c c }
-     t&1\\
-     
-
+     t&1
   \end{array} \right]x=-6.
-  \\Now substituting point P in the normal equation we get 
-  \\ \left[ 
+  \]
+  Now substituting point P in the normal equation we get 
+  \[
+  \left[ 
   \begin{array}{ c c }
      t&1\\
-     
   \end{array} \right]\cdot \left[ 
   \begin{array}{ c }
-$2t^2$\\
+     2t^2\\
      4t
-     
   \end{array} \right]=-6
-  \\ \text{ i.e } $2t^2$+4t=-6
- \\  Therefore t=-1 is the only real root for the above equation 
-  \\ Therefore the point P is p=\left[ 
+  \]
+  \text{ i.e } $2t^2+4t=-6$
+Therefore $t=-1$ is the only real root for the above equation 
+Therefore the point P is 
+$$p=\left[ 
   \begin{array}{ c  }
      2\\
     -4
   \end{array} \right]
- 
+ $$
 
 \end{frame}
 
@@ -289,21 +294,22 @@ $2t^2$\\
 
 \begin{frame}
 \frametitle{Solution in MATRIX form}
-Now taking P as centre and C as point on the circle ,we calculate radius of the required circle $|p-c|^{2}=(2-0)^2+(-4+6)^2$\\
-r^2 = 2^2 + 2^2 = 8\\
+Now taking P as centre and C as point on the circle ,we calculate radius of the required circle
+\begin{gather*}
+|p-c|^{2}=(2-0)^{2}+(-4+6)^{2} \\
+r^2 = 2^{2} + 2^{2} = 8
+\end{gather*}
 Now, taking this radius and P as a centre, equation of the circle is,
-\begin{center}
-\[
+\begin{gather*}
 |x-p|^{2} = r^{2}\\
-\left( x-p \right)\cdot (x-p)^{T} = r^{2}
-= 8\\[10pt]
+\left( x-p \right)\cdot (x-p)^{T} = r^{2} = 8\\
 xx^{T} - xp^{T} - px^{T} + pp^{T} = 8
-\]
-\end{center}
+\end{gather*}
 \end{frame}
 
 \begin{frame}{Solution in MATRIX Form}
-$$
+\begin{equation*}
+\begin{aligned}
 xx^{T} - x \left[\begin{array}{ c }
      2 -4\\
   \end{array} \right]
@@ -320,8 +326,13 @@ xx^{T} - x \left[\begin{array}{ c }
      2\\
     -4
   \end{array} \right]x^{T} + 12 = 0
-$$
- \\This is the equation of the circle required.
+  \end{aligned}
+\end{equation*}
+\centering
+This is the equation of the circle required.
+ 
+ 
+ 
 \end{frame}
 
 
